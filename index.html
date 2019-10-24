@@ -1,14 +1,260 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <title>Weather Project 2 Margarida</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>flower weather app</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cousine&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/30a804293e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
+
   <body>
-    <h1>
-      Hello World
-    </h1>
+    <div class="container">
+      <div class="weather-app">
+        <div class="row">
+          <div class="col-6 search-city">
+            <form id="search-form">
+              <input
+                type="search"
+                placeholder="Enter a city"
+                id="search-input"
+                class="form-control"
+                autocomplete="off"
+              />
+              <input type="submit" value="search" />
+            </form>
+          </div>
+          <div class="col-1"></div>
+          <div class="col-4 day-details">
+            <div class="row">
+              <div class="col-4" id="current-time"></div>
+              <div class="col-4" id="week-day"></div>
+              <div class="col-4" id="current-date"></div>
+
+              <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6">
+                  <button class="current-place" id="current-location">
+                    Current Location
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <section class="main-information">
+          <div class="forecast">
+            <div class="col">
+              <span id="city-name"> </span>
+              <div>
+                <span id="temperature"></span
+                ><span class="weather-unit">
+                  <a href="#" id="celsius">°C</a>
+                  │
+                  <a href="#" id="fahrenheit">°F</a>
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3 other-places">
+                Viseu
+                <div>
+                  15°C
+                </div>
+              </div>
+              <div class="col-3 other-places">
+                Porto
+                <div>
+                  14°C
+                </div>
+              </div>
+
+              <div class="col-3 other-places">
+                Lisboa
+                <div>
+                  24°C
+                </div>
+              </div>
+              <div class="col-3 other-places">
+                Sagres
+                <div>
+                  22°C
+                </div>
+              </div>
+              <div class="col-1"></div>
+            </div>
+          </div>
+        </section>
+        <div class="btn-group btn-group-sm" role="group">
+          <button type="button" class="btn btn-outline-secondary">
+            Temperature
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            Precipitation
+          </button>
+          <button type="button" class="btn btn-outline-secondary">Wind</button>
+        </div>
+
+        <hr />
+        <section class="hourly-forecast">
+          <div class="row">
+            <div class="col-1 weather-hours">
+              08am
+              <div>
+                19°
+              </div>
+            </div>
+            <div class="col-1 weather-hours">
+              09am
+              <div>
+                20°
+              </div>
+            </div>
+            <div class="col-1 weather-hours">
+              10am
+              <div>
+                22°
+              </div>
+            </div>
+            <div class="col-1 weather-hours">
+              11am
+              <div>
+                22°
+              </div>
+            </div>
+            <div class="col-1 weather-hours">
+              12pm
+              <div>
+                24°
+              </div>
+            </div>
+
+            <div class="col-1 weather-hours">
+              1pm
+              <div>
+                25°
+              </div>
+            </div>
+
+            <div class="col-1 weather-hours">
+              2pm
+              <div>
+                25°
+              </div>
+            </div>
+            <div class="col-1 weather-hours">
+              3pm
+              <div>
+                25°
+              </div>
+            </div>
+            <div class="col-1 weather-hours">
+              4pm
+              <div>
+                24°
+              </div>
+            </div>
+            <div class="col-1 weather-hours">
+              5pm
+              <div>
+                23°
+              </div>
+            </div>
+            <div class="col-1 weather-hours">
+              6pm
+              <div>
+                20°
+              </div>
+            </div>
+            <div class="col-1 weather-hours">
+              7pm
+              <div>
+                20°
+              </div>
+            </div>
+          </div>
+        </section>
+        <br />
+        <br />
+        <hr />
+
+        <section class="next-days-forecast>">
+          <div class="row forecast">
+            <div class="col-2 week-day">
+              TUE
+              <div>
+                24°
+              </div>
+              <div>
+                <i class="fas fa-cloud-sun weather-icon"></i>
+              </div>
+            </div>
+            <div class="col-2 week-day">
+              WED
+              <div>
+                24°
+              </div>
+              <div>
+                <i class="fas fa-cloud-sun weather-icon"></i>
+              </div>
+            </div>
+            <div class="col-2 week-day">
+              THU
+              <div>
+                23°
+              </div>
+              <div>
+                <i class="fas fa-wind state-icon"></i>
+              </div>
+            </div>
+            <div class="col-2 week-day">
+              FRI
+              <div>
+                23°
+              </div>
+              <div>
+                <i class="fas fa-wind weather-icon"></i>
+              </div>
+            </div>
+            <div class="col-2 week-day">
+              SAT
+              <div>
+                22°
+              </div>
+              <div>
+                <i class="fas fa-sun weather-icon"></i>
+              </div>
+            </div>
+            <div class="col-2 week-day">
+              SUN
+              <div>
+                22°
+              </div>
+              <div>
+                <i class="fas fa-sun weather-icon"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
   </body>
 </html>
