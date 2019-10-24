@@ -14,7 +14,7 @@ hr {
 
 .weather-app {
   display: block;
-  margin: 75px auto;
+  margin: 75px 75px 10px;
   max-width: 800px;
   padding: 30px;
   border: 1px solid #dadde1;
@@ -103,4 +103,12 @@ hr {
 .active:hover {
   text-decoration: none;
   color: #cc90c8;
+}
+
+.open-source {
+  font-size: 12px;
+  display: block;
+  margin: 10px 75px auto;
+  max-width: 800px;
+  padding: 10px;
 }
