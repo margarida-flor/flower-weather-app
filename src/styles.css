@@ -56,7 +56,7 @@ hr {
   border-radius: 50px;
 }
 
-#city-name {
+.city-name {
   font-size: 30px;
   text-align: center;
   padding: 20px 30px;
