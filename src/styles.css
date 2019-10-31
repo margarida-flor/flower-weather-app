@@ -75,11 +75,10 @@ hr {
   text-align: center;
 }
 
-.main-information,
-.next-days-forecast {
+.main-information {
   font-size: 18px;
   line-height: 30px;
-  padding: 70px 20px;
+  padding: 30px 30px;
   display: block;
 }
 .hourly-forecast {
