@@ -59,17 +59,10 @@
         </div>
         <br />
         <section class="main-information">
-          <div>
-            <img
-              src="http://openweathermap.org/img/wn/10d@2x.png"
-              alt="light rain"
-              id="icon"
-              class="img-responsive center-block"
-            />
-          </div>
           <div class="current-forecast">
             <div class="city-name">
               <span id="city-name"> </span>
+
               <div>
                 <span id="temperature"></span
                 ><span class="weather-unit">
@@ -78,105 +71,35 @@
                   <a href="#" id="fahrenheit">°F</a>
                 </span>
               </div>
-              <div id="description">
-                description
+              <div class="weather-icon">
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  alt="light rain"
+                  id="icon"
+                  class="mx-auto"
+                />
+              </div>
+              <div id="description" class="weather-description">
+                <div>
+                  <img
+                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    alt="light rain"
+                    id="icon"
+                    class="mx-auto"
+                  />
+                </div>
               </div>
             </div>
-
-            <div class="row">
-              <div class="col-6">
-                Wind:
-                <span id="wind"> </span>km/h
-              </div>
-
-              <div class="col-6">
-                Humidity:
-                <span id="humidity"></span>%
-              </div>
+            <div class="current-conditions">
+              Wind:
+              <span id="wind"> </span>km/h
             </div>
-          </div>
-        </section>
-        <hr />
-        <section class="hourly-forecast">
-          <div class="row">
-            <div class="col-1 weather-hours">
-              08am
-              <div>
-                19°
-              </div>
-            </div>
-            <div class="col-1 weather-hours">
-              09am
-              <div>
-                20°
-              </div>
-            </div>
-            <div class="col-1 weather-hours">
-              10am
-              <div>
-                22°
-              </div>
-            </div>
-            <div class="col-1 weather-hours">
-              11am
-              <div>
-                22°
-              </div>
-            </div>
-            <div class="col-1 weather-hours">
-              12pm
-              <div>
-                24°
-              </div>
-            </div>
-
-            <div class="col-1 weather-hours">
-              1pm
-              <div>
-                25°
-              </div>
-            </div>
-
-            <div class="col-1 weather-hours">
-              2pm
-              <div>
-                25°
-              </div>
-            </div>
-            <div class="col-1 weather-hours">
-              3pm
-              <div>
-                25°
-              </div>
-            </div>
-            <div class="col-1 weather-hours">
-              4pm
-              <div>
-                24°
-              </div>
-            </div>
-            <div class="col-1 weather-hours">
-              5pm
-              <div>
-                23°
-              </div>
-            </div>
-            <div class="col-1 weather-hours">
-              6pm
-              <div>
-                20°
-              </div>
-            </div>
-            <div class="col-1 weather-hours">
-              7pm
-              <div>
-                20°
-              </div>
+            <div>
+              Humidity:
+              <span id="humidity"></span>%
             </div>
           </div>
         </section>
-        <br />
-        <br />
       </div>
       <footer class="open-source">
         <a
